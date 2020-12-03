@@ -44,9 +44,6 @@ server.listen(80, () => {       //écoute port 80
 
 
 
-
-//-------------page web----------------
-
 app.get('', (req, res) => {
     res.sendFile(__dirname + '/static/index.html');
 });
@@ -66,12 +63,4 @@ app.get('/membre', (req, res) => {
     res.sendFile(__dirname + '/static/membre.html');
 });
 
-
-//---------------puissance 4-------------- 
-
-//-----------socket---------
-
-
-
-//--------------------bot discord-----------------
 
