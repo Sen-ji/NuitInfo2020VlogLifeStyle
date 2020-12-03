@@ -9,16 +9,17 @@
      server = require('http').createServer(app)
      //ent = require('ent'),
      //fs = require('fs');
- //var mysql = require('mysql');
+ var mysql = require('mysql');
 
 //----------BDD----------
 
-// var pool = mysql.createPool({
-//     host: "192.168.1.21",
-//     user: "**",
-//     password: "**",
-//     database: "**"
-// });
+ var pool = mysql.createPool({
+     host: "192.168.1.21",
+     //host : sangi.ddns.net
+     user: "DA",
+     password: "DA",
+     database: "nuit"
+ });
 
 //-------parametre-------
 app.use(express.static('public')) 
@@ -47,6 +48,3 @@ server.listen(80, () => {       //écoute port 80
 app.get('', (req, res) => {
     res.sendFile(__dirname + '/public/index.html');
 });
-
-
-
