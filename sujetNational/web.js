@@ -21,7 +21,7 @@
 // });
 
 //-------parametre-------
-app.use(express.static('static')) 
+app.use(express.static('public')) 
 
 //dossier static
 // var serveur = require('https').createServer({
@@ -45,22 +45,8 @@ server.listen(80, () => {       //écoute port 80
 
 
 app.get('', (req, res) => {
-    res.sendFile(__dirname + '/static/index.html');
+    res.sendFile(__dirname + '/public/index.html');
 });
-app.get('/p4', (req, res) => {
-    res.sendFile(__dirname + '/static/p4.html');
-});
-app.get('/bot', (req, res) => {
-    res.sendFile(__dirname + '/static/bot.html');
-});
-app.get('/bot/oui', (req, res) => {
-    res.sendFile(__dirname + '/static/oui.html');
-});
-app.get('/projet', (req, res) => {
-    res.sendFile(__dirname + '/static/projet.html');
-});
-app.get('/membre', (req, res) => {
-    res.sendFile(__dirname + '/static/membre.html');
-});
+
 
 
