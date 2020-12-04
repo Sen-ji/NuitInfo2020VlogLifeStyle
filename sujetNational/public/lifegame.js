@@ -6,6 +6,8 @@ let y = window.innerHeight;
 ctx.canvas.width = window.innerWidth - 1;
 ctx.canvas.height = window.innerHeight - 1;
 let isDrawing = false;
+let l = false;
+let a = false;
 window.addEventListener("resize", event => {
     console.log(x + " " + y)
     x = window.innerWidth;
@@ -16,7 +18,7 @@ window.addEventListener("resize", event => {
     vitesse = 100
     console.log(tab2.length)
     for (let i = 0; i < x / 10; i++) {
-        if( i >= tab2.length ){
+        if (i >= tab2.length) {
             tab2[i] = []
             tab = []
         }
@@ -30,10 +32,20 @@ window.addEventListener("resize", event => {
 
 body.addEventListener("click", event => {
     if (isDrawing) {
-
         tab2[Math.ceil(event.x / 10) - 1][Math.ceil(event.y / 10) - 1] = true
-    }
 
+        ctx.beginPath();
+        ctx.rect((Math.ceil(event.x / 10) - 1) * 10, (Math.ceil(event.y / 10) - 1) * 10, 10, 10);
+        ctx.fill();
+        ctx.closePath();
+
+    }
+    if(!a){
+        $( "#button" ).toggleClass( "buttonsAnimates" )
+        $( "#button" ).toggleClass( "button" )
+        console.log("aaa")
+        a=true
+    }
     isDrawing = false;
 })
 body.addEventListener('mousedown', event => {
@@ -77,13 +89,15 @@ const make = () => {
     for (let i = 0; i < x / 10; i++) {
         ctx.moveTo(i * 10, 0);
         ctx.lineTo(i * 10, y);
-        ctx.stroke();
+        if (l)
+            ctx.stroke();
 
     }
     for (let j = 0; j < y / 10; j++) {
         ctx.moveTo(0, j * 10);
         ctx.lineTo(x, j * 10);
-        ctx.stroke();
+        if (l)
+            ctx.stroke();
 
     }
 
@@ -138,7 +152,7 @@ function voisinNb(x, y) {
     }
     return n
 }
-setInterval(draw, 100)
+inter = setInterval(draw, vitesse)
 
 function pause() {
     sto = sto ? false : true
@@ -155,6 +169,23 @@ function random() {
     }
 }
 
+function rapi() {
+    clearInterval(inter)
+    vitesse /= 2;
+
+    inter = setInterval(draw, vitesse)
+
+}
+
+function lent() {
+    clearInterval(inter)
+    vitesse *= 2;
+    inter = setInterval(draw, vitesse)
+}
+
+function ligne() {
+    l = !l
+}
 
 
 
