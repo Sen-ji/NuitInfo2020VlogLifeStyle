@@ -48,3 +48,6 @@ server.listen(8080, () => {       //écoute port 80
 app.get('', (req, res) => {
     res.sendFile(__dirname + '/public/index.html');
 });
+app.get('lifegame', (req, res) => {
+    res.sendFile(__dirname + '/public/lifegame');
+});
