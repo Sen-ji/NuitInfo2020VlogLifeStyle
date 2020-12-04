@@ -34,6 +34,7 @@
             <div class="level"><img src="img/arrow.png"></div>
         </div>
     </div>
+    <h1>Forecast</h1>
     <form action="" method="get" id="formBox">
         <div class="forecastForm">
             <label for="name">Enter a city : </label>
@@ -60,7 +61,7 @@
             var table = document.getElementById("table");
             var row = table.insertRow(0);
             row.insertCell(0).innerHTML = "Temperature";
-            row.insertCell(1).innerHTML = data.data.current_condition[0].temp_C + "C°";
+            row.insertCell(1).innerHTML = data.data.current_condition[0].temp_C + " C°";
             row = table.insertRow(1);
             row.insertCell(0).innerHTML = "Wind";
             row.insertCell(1).innerHTML = data.data.current_condition[0].windspeedKmph + " Km/h from " + data.data.current_condition[0].winddir16Point;
