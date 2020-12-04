@@ -87,25 +87,37 @@ var keys_konami = [];
 var konami = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a"];
 var keys_covid = [];
 var covid = ["c", "o", "v", "i", "d"];
+var keys_neo = [];
+var neo = ["n", "e", "o"];
 
 document.addEventListener("keydown", event => {
-	if (event.key == konami[keys_konami.length]) {
-		keys_konami.push(event.key);
+	let key_value = event.key.toLowerCase();
+	if (key_value == konami[keys_konami.length]) {
+		keys_konami.push(key_value);
 	} else {
 		keys_konami = [];
 	}
-	if (event.key == covid[keys_covid.length]) {
-		keys_covid.push(event.key);
+	if (key_value == covid[keys_covid.length]) {
+		keys_covid.push(key_value);
 	} else {
 		keys_covid = [];
+	}
+	if(key_value == neo[keys_neo.length]) {
+		keys_neo.push(key_value);
+	} else {
+		keys_neo = [];
 	}
 	if (keys_konami.length == konami.length) {
-		document.getElementById("leet").innerHTML = process(1);
-		keys_konami = [];
+		process(1);
+		resetInput();
 	}
 	if (keys_covid.length == covid.length) {
-		document.getElementById("leet").innerHTML = process(2);
-		keys_covid = [];
+		process(2);
+		resetInput();
+	}
+	if(keys_neo.length == neo.length) {
+		process(3);
+		resetInput();
 	}
 	console.log(event.key);
 	if (event.key == " ") {
@@ -113,6 +125,12 @@ document.addEventListener("keydown", event => {
 		document.location.reload();
 	}
 });
+
+function resetInput() {
+	keys_covid = [];
+	keys_konami = [];
+	keys_neo = [];
+}
 
 function reverse(input, map) {
 	let result = input;
