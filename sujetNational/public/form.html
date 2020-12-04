@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/clocklet/css/clocklet.min.css">
     <link rel="stylesheet" href="style/index.css">
     <script src="https://cdn.jsdelivr.net/npm/clocklet"></script>
+    <script src="leet.js" charset="utf-8"></script>
 </head>
 
 <body>
@@ -18,22 +19,22 @@
     <div id="navbar">
         <a href="index.html">
             <div id="home" class="link">
-                <p>Home</p>
+                <p class="leet">Home</p>
             </div>
         </a>
         <a href="form.html">
             <div id="form" class="link">
-                <p>Form</p>
+                <p class="leet">Form</p>
             </div>
         </a>
         <a href="carbon.html">
             <div id="carbon" class="link">
-                <p>Carbon</p>
+                <p class="leet">Carbon</p>
             </div>
         </a>
         <a href="forecast.html">
             <div id="forecast" class="link">
-                <p>Forecast</p>
+                <p class="leet">Forecast</p>
             </div>
         </a>
         <div id="circle">
@@ -42,24 +43,24 @@
     </div>
 
     <div class="w3-display-middle">
-        <h1>YOUR SESSION'S FORM</h1>
+        <h1 class="leet">YOUR SESSION'S FORM</h1>
 
         <form action="">
             <div class="input">
-                <label>NAME</label>
+                <label class="leet">NAME</label>
                 <input type="text" nom="name" placeholder="your lastname">
             </div>
 
             <div class="input">
                 <br>
-                <label>FIRSNAME</label>
+                <label class="leet">FIRSNAME</label>
                 <input type="text" nom="firstname" placeholder="your firstname">
             </div>
 
             <fieldset>
-                <legend>Identification's prelevment</legend>
+                <legend class="leet">Identification's prelevment</legend>
                 <div class="input">
-                    <label>City</label>
+                    <label class="leet">City</label>
                     <input type="text" list="city" />
                     <datalist id="city">
                         <!--TODO Import BD city-->
@@ -72,30 +73,30 @@
                 <!--TODO Afficher seulement les spots de la ville selectionné-->
                 <br>
                 <div class="input">
-                    <label>Spot</label>
+                    <label class="leet">Spot</label>
                 </div>
 
                 <br>
                 <!--TODO en js-->
                 <div class="input">
-                    <label>Date</label>
+                    <label class="leet">Date</label>
                     <input type="datatime-local" id="date"><br>
                 </div>
                 
                 <div class="input">
-                    <label>Hour Beginning</label>
+                    <label class="leet">Hour Beginning</label>
                     <input data-clocklet id="hourB" oninput="operation()">
                 </div>
 
                 <br>
                 <div class="input">
-                    <label>Hour Ending</label>
+                    <label class="leet">Hour Ending</label>
                     <input data-clocklet id="hourE" oninput="operation()">
                 </div>
 
                 <div class="input">
                     <br>
-                    <label>Duration</label>
+                    <label class="leet">Duration</label>
                     <p id="operation"></p>
                 </div>
 
@@ -104,47 +105,47 @@
             </fieldset>
 
             <fieldset>
-                <legend>Spot's frequentation</legend>
-                <label>swimmer affluence</label><br>
-                <label>low</label>
+                <legend class="leet">Spot's frequentation</legend>
+                <label class="leet">swimmer affluence</label><br>
+                <label class="leet">low</label>
                 <input type="range" min="0" max="2">
-                <label>high</label><br>
+                <label class="leet">high</label><br>
 
-                <label>water sport enthusiasts</label><br>
-                <label>low</label>
+                <label class="leet">water sport enthusiasts</label><br>
+                <label class="leet">low</label>
                 <input type="range" min="0" max="10">
-                <label>high</label>
-
-                <br>
-                <label>fishing ship</label><br>
-                <label>low</label>
-                <input type="range" min="0" max="10">
-                <label>high</label>
+                <label class="leet">high</label>
 
                 <br>
-                <label>square-time ship</label><br>
-                <label>low</label>
+                <label class="leet">fishing ship</label><br>
+                <label class="leet">low</label>
                 <input type="range" min="0" max="10">
-                <label>high</label>
+                <label class="leet">high</label>
 
                 <br>
-                <label>sailing ship</label><br>
-                <label>low</label>
+                <label class="leet">square-time ship</label><br>
+                <label class="leet">low</label>
                 <input type="range" min="0" max="10">
-                <label>high</label>
+                <label class="leet">high</label>
+
+                <br>
+                <label class="leet">sailing ship</label><br>
+                <label class="leet">low</label>
+                <input type="range" min="0" max="10">
+                <label class="leet">high</label>
             </fieldset>
 
             <fieldset>
-                <legend>Waterman</legend>
-                <input type="checkbox" value="cigarets"> <label>Cigarets</label>
-                <input type="checkbox" value="solarcream"> <label>Solar cream</label>
-                <input type="checkbox" value="perfume"> <label>Perfume</label>
-                <input type="checkbox" value="moisturizing cream"> <label>moisturizing cream</label>
-                <input type="checkbox" value="makeup"> <label>Makeup</label>
-                <input type="checkbox" value="gazoline"> <label>Gazoline</label>
-                <input type="checkbox" value="fertilizer"> <label>Fertilizer</label>
-                <input type="checkbox" value="painting"> <label>Painting</label> <br>
-                <input type="checkbox" value="other"><label>Other : </label><input type="text">
+                <legend class="leet">Waterman</legend>
+                <input type="checkbox" value="cigarets"> <label class="leet">Cigarets</label>
+                <input type="checkbox" value="solarcream"> <label class="leet">Solar cream</label>
+                <input type="checkbox" value="perfume"> <label class="leet">Perfume</label>
+                <input type="checkbox" value="moisturizing cream"> <label class="leet">moisturizing cream</label>
+                <input type="checkbox" value="makeup"> <label class="leet">Makeup</label>
+                <input type="checkbox" value="gazoline"> <label class="leet">Gazoline</label>
+                <input type="checkbox" value="fertilizer"> <label class="leet">Fertilizer</label>
+                <input type="checkbox" value="painting"> <label class="leet">Painting</label> <br>
+                <input type="checkbox" value="other"><label class="leet">Other : </label><input type="text">
             </fieldset>
 
             <input type="submit">
@@ -158,6 +159,7 @@
     document.getElementById("circle").addEventListener('mouseleave', e => {
         document.getElementById("navbar").style.animationPlayState = "paused";
     });
+    process();
 </script>
 
 </html>
