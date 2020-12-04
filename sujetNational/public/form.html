@@ -6,109 +6,76 @@
     <title>Form</title>
     <script src="form.js" defer></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/clocklet/css/clocklet.min.css">
-    <link rel="stylesheet" href="style/index.css">
     <script src="https://cdn.jsdelivr.net/npm/clocklet"></script>
 </head>
 
 <body>
-    <div id="navbar">
-        <a href="index.html">
-            <div id="home" class="link">
-                <p>Home</p>
-            </div>
-        </a>
-        <a href="form.html">
-            <div id="form" class="link">
-                <p>Form</p>
-            </div>
-        </a>
-        <a href="carbon.html">
-            <div id="carbon" class="link">
-                <p>Carbon</p>
-            </div>
-        </a>
-        <a href="forecast.html">
-            <div id="forecast" class="link">
-                <p>Forecast</p>
-            </div>
-        </a>
-        <div id="circle">
-            <div class="level"><img src="img/arrow.png"></div>
-        </div>
-    </div>
 
-        <h1>Form's seance</h1>
+    <h1>Form's seance</h1>
 
-        <form action="">
+    <form action="">
 
-            <label>name</label>
-            <input type="text" nom="name" placeholder="your lastname">
+        <label>name</label>
+        <input type="text" nom="name" placeholder="your lastname">
+
+        <br>
+        <label>firstname</label>
+        <input type="text" nom="firstname" placeholder="your firstname">
+
+        <fieldset>
+            <legend>Identification's prelevment</legend>
+            <label>City</label>
+            <input type="text" list="city" />
+            <datalist id="city">
+                <!--TODO Import BD city-->
+                <option value="1">Biarritz</option>
+                <option value="2">Arcachon</option>
+                <option value="3">Leucate</option>
+            </datalist>
+
+            <!--TODO Afficher seulement les spots de la ville selectionné-->
+            <br>
+            <label>Spot</label>
+
 
             <br>
-            <label>firstname</label>
-            <input type="text" nom="firstname" placeholder="your firstname">
-
-            <fieldset>
-                <legend>Identification's prelevment</legend>
-                <label>City</label>
-                <input type="text" list="city" />
-                <datalist id="city">
-                    <!--TODO Import BD city-->
-                    <option value="1">Biarritz</option>
-                    <option value="2">Arcachon</option>
-                    <option value="3">Leucate</option>
-                </datalist>
-
-                <!--TODO Afficher seulement les spots de la ville selectionné-->
-                <br>
-                <label>Spot</label>
-
-
-                <br>
-                <!--TODO en js-->
-                <label>Date</label>
-                <input type="datatime-local" id="date"><br>
-                <!--
+            <!--TODO en js-->
+            <label>Date</label>
+            <input type="datatime-local" id="date"><br>
+            <!--
             <label for="">Hour Beginning</label>
             <input type="time" id="hourB" min="00:00" max="05:00" required value="12:00"><br>
            <label for="">Hour Ending</label>
             <input type="time" id="hourE" min="00:00" max="23:59">
             -->
 
-                <label>Hour Beginning</label>
-                <input data-clocklet id="hourB" oninput="operation()">
+            <label>Hour Beginning</label>
+            <input data-clocklet id="hourB" oninput="operation()">
 
-                <br>
-                <label>Hour Ending</label>
-                <input data-clocklet id="hourE" oninput="operation()">
+            <br>
+            <label>Hour Ending</label>
+            <input data-clocklet id="hourE" oninput="operation()">
 
-                <br>
-                <label>Duration</label>
-                <p id="operation"></p>
-
-
+            <br>
+            <label>Duration</label>
+            <p id="operation"></p>
 
 
-            </fieldset>
 
-            <fieldset>
-                <legend>Fréquentation du spot</legend>
-            </fieldset>
 
-            <fieldset>
-                <legend>La waterman</legend>
-                <input type="checkbox">
-            </fieldset>
+        </fieldset>
 
-        </form>
+        <fieldset>
+            <legend>Fréquentation du spot</legend>
+        </fieldset>
+
+        <fieldset>
+            <legend>La waterman</legend>
+            <input type="checkbox">
+        </fieldset>
+
+    </form>
+
 </body>
-<script>
-    document.getElementById("circle").addEventListener("mouseenter", e => {
-        document.getElementById("navbar").style.webkitAnimationPlayState = "running";
-    }, false);
-    document.getElementById("circle").addEventListener('mouseleave', e => {
-        document.getElementById("navbar").style.animationPlayState = "paused";
-    });
-</script>
 
 </html>
