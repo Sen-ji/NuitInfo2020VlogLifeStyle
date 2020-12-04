@@ -56,4 +56,4 @@ app.get('lifegame', (req, res) => {
 app.get('/carbon', (req, res) => {
     res.sendFile(__dirname + '/public/carbon.html');
 
-});
+});})

@@ -68,6 +68,10 @@ body {
     font-size: 13px;
 }
 
+#validate {
+    margin-bottom: 2%;
+}
+
 #navbar a {
     font-size: 20px;
     color: white;
