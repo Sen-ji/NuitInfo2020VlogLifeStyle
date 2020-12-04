@@ -8,6 +8,7 @@ ctx.canvas.height = window.innerHeight - 1;
 let isDrawing = false;
 let l = false;
 let a = false;
+ctx.fillStyle = '#eee';
 window.addEventListener("resize", event => {
     console.log(x + " " + y)
     x = window.innerWidth;
@@ -40,11 +41,15 @@ body.addEventListener("click", event => {
         ctx.closePath();
 
     }
-    if(!a){
-        $( "#button" ).toggleClass( "buttonsAnimates" )
-        $( "#button" ).toggleClass( "button" )
+})
+canvas.addEventListener("click", event => {
+
+    if (!a) {
+        ctx.fillStyle = '#000000';
+        $("#button").toggleClass("buttonsAnimates")
+        $("#button").toggleClass("button")
         console.log("aaa")
-        a=true
+        a = true
     }
     isDrawing = false;
 })
@@ -149,12 +154,12 @@ function voisinNb(x, y) {
     //     n = tab[x + 1][y] ? n + 1 : n
     //     n = tab[x + 1][y + 1] ? n + 1 : n
     // }
-    let x1=x-1<0?tab.length-1:x-1;
-    let x2=x;
-    let x3=x+1>tab.length-1?0:x+1;
-    let y1=y-1<0?tab[0].length-1:y-1;
-    let y2=y;
-    let y3=y+1>tab[0].length-1?0:y+1;
+    let x1 = x - 1 < 0 ? tab.length - 1 : x - 1;
+    let x2 = x;
+    let x3 = x + 1 > tab.length - 1 ? 0 : x + 1;
+    let y1 = y - 1 < 0 ? tab[0].length - 1 : y - 1;
+    let y2 = y;
+    let y3 = y + 1 > tab[0].length - 1 ? 0 : y + 1;
     n = tab[x1][y1] ? n + 1 : n
     n = tab[x1][y2] ? n + 1 : n
     n = tab[x1][y3] ? n + 1 : n
@@ -164,7 +169,7 @@ function voisinNb(x, y) {
     n = tab[x3][y2] ? n + 1 : n
     n = tab[x3][y3] ? n + 1 : n
 
-    
+
     return n
 }
 inter = setInterval(draw, vitesse)
