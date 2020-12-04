@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Form</title>
+    <script src="form.js" defer></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/clocklet/css/clocklet.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/clocklet"></script>
+</head>
+
+<body>
+
+    <h1>Form's seance</h1>
+
+    <form action="">
+
+        <label>name</label>
+        <input type="text" nom="name" placeholder="your lastname">
+
+        <br>
+        <label>firstname</label>
+        <input type="text" nom="firstname" placeholder="your firstname">
+
+        <fieldset>
+            <legend>Identification's prelevment</legend>
+            <label>City</label>
+            <input type="text" list="city" />
+            <datalist id="city">
+                <!--TODO Import BD city-->
+                <option value="1">Biarritz</option>
+                <option value="2">Arcachon</option>
+                <option value="3">Leucate</option>
+            </datalist>
+
+            <!--TODO Afficher seulement les spots de la ville selectionné-->
+            <br>
+            <label>Spot</label>
+
+
+            <br>
+            <!--TODO en js-->
+            <label>Date</label>
+            <input type="datatime-local" id="date"><br>
+            <!--
+            <label for="">Hour Beginning</label>
+            <input type="time" id="hourB" min="00:00" max="05:00" required value="12:00"><br>
+           <label for="">Hour Ending</label>
+            <input type="time" id="hourE" min="00:00" max="23:59">
+            -->
+
+            <label>Hour Beginning</label>
+            <input data-clocklet id="hourB" oninput="operation()">
+
+            <br>
+            <label>Hour Ending</label>
+            <input data-clocklet id="hourE" oninput="operation()">
+
+            <br>
+            <label>Duration</label>
+            <p id="operation"></p>
+
+
+
+
+        </fieldset>
+
+        <fieldset>
+            <legend>Fréquentation du spot</legend>
+        </fieldset>
+
+        <fieldset>
+            <legend>La waterman</legend>
+            <input type="checkbox">
+        </fieldset>
+
+    </form>
+
+</body>
+
+</html>

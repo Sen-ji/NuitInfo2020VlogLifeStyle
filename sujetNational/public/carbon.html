@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>carbon</title>
+</head>
+
+<body>
+    <h1>What kind of green are you ?</h1>
+
+    <form method="GET" action="carbon.js">
+        <h3>Q1. Votre ordinateur portable ne fonctionne plus, que faites-vous ?</h3>
+        <input type="radio" name="q1" value="neuf" class="square">
+        <label>Acheter un neuf</label>
+        <br>
+        <input type="radio" name="q1" value="reconditionne" class="cross">
+        <label>Acheter un reconditionné</label>
+        <br>
+        <input type="radio" name="q1" value="reparer" class="circle">
+        <label>Le réparer</label>
+        <br>
+
+        <h3>Q2. Vous venez de commander un casque VR, quel mode de livraison choisissez-vous ?</h3>
+        <input type="radio" name="q2" value="express" class="square">
+        <label>Livraison express (sous 2 jours ouvrés)</label>
+        <br>
+        <input type="radio" name="q2" value="standard" class="cross">
+        <label>Livraison standard</label>
+        <br>
+        <input type="radio" name="q2" value="magasin" class="circle">
+        <label>Retrait en magasin</label>
+        <br>
+
+        <h3>Q3. Vous habitez proche de travail, quel mode de transport utilisez-vous ?</h3>
+        <input type="radio" name="q3" value="voiture" class="square">
+        <label>Voiture</label>
+        <br>
+        <input type="radio" name="q3" value="commun" class="cross">
+        <label>Transport en commun</label>
+        <br>
+        <input type="radio" name="q3" value="autre" class="circle">
+        <label>Vélo, marche à pieds, trottinette, ...</label>
+        <br>
+
+        <h3>Q4. Quelle habitude avez-vous parmi les suivantes ?</h3>
+        <input type="radio" name="q4" value="brancher" class="square">
+        <label>Laisser les appareils electroniques en veille prolongée ou allumés</label>
+        <br>
+        <input type="radio" name="q4" value="led" class="cross">
+        <label>Laisser uniquement les lumières des LED allumées en permancence</label>
+        <br>
+        <input type="radio" name="q4" value="eteins" class="circle">
+        <label>Tout éteints hors utilisation</label>
+        <br>
+
+        <h3>Q5. Lorsque vous aérez votre maison, les radiateurs sont-ils : </h3>
+        <input type="radio" name="q5" value="éteinds" class="circle">
+        <label>éteinds</label>
+        <br>
+        <input type="radio" name="q5" value="allumés" class="square">
+        <label>allumés</label>
+        <br>
+        <input type="radio" name="q5" value="autre" class="cross">
+        <label>aucune idée ! </label>
+        <br>
+
+        <h3>Q6. Combien de fois vous est-il arriver de jeter un déchet par terre ?</h3>
+        <input type="radio" name="q6" value="jamais" class="circle">
+        <label>Jamais jamais jamais</label>
+        <br>
+        <input type="radio" name="q6" value="quelquesfois" class="cross">
+        <label>ça m'arrive quelques fois</label>
+        <br>
+        <input type="radio" name="q6" value="bocou" class="square">
+        <label>Je ne fais pas attention. jaim polluer bocou for</label>
+
+        <h3>Q7. Quels produits privilegiez-vous pendant les courses ?</h3>
+        <input type="radio" name="q7" value="aime" class="square">
+        <label>J'achète ce qui me fait plaisir</label>
+        <br>
+        <input type="radio" name="q7" value="biolocal" class="circle">
+        <label>J'achète bio et/ou local</label>
+        <br>
+        <input type="radio" name="q7" value="rien" class="cross">
+        <label>Je ne mange pas.</label>
+        <br>
+
+        <h3>Q8. Comment gerez-vous votre consommation d'eau ?</h3>
+        <input type="radio" name="q8" value="pasattention" class="cross">
+        <label>Je ne fais pas attention à ma consommation d'eau</label>
+        <br>
+        <input type="radio" name="q8" value="reduction" class="circle">
+        <label>Je fais très attention, à réduire ma consommation d'eau</label>
+        <br>
+        <input type="radio" name="q8" value="nimportequoi" class="square">
+        <label>Je prend un bain tous les jours</label>
+        <br>
+
+        <h3>Q9. Mes déchets,</h3>
+        <input type="radio" name="q9" value="tri" class="cross">
+        <label>je les tris</label>
+        <br>
+        <input type="radio" name="q9" value="patri" class="square">
+        <label>Je ne les tris pas</label>
+        <br>
+        <input type="radio" name="q9" value="reduit" class="circle">
+        <label>je les réduis au maximum tout en les triant</label>
+        <br>
+
+        <h3>Q10. Que pensez-vous de l'empreinte carbone ?</h3>
+        <input type="radio" name="q10" value="jycroispas" class="square">
+        <label>Je n'y crois pas du tout.</label>
+        <br>
+        <input type="radio" name="q10" value="engager" class="circle">
+        <label>Je suis engagé pour réduire l'empreinte carbone</label>
+        <br>
+        <input type="radio" name="q10" value="pabien" class="cross">
+        <label>Je trouve que c'est vraiment nul (mais je fais rien)</label>
+        <br>
+        <br>
+
+        <input type="submit">
+<!--Recuperer reponses aux questions, et dire quel green tu es-->
+    </form>
+</body>
+
+</html>
