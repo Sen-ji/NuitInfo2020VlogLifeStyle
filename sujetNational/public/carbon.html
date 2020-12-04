@@ -4,222 +4,281 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style/index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <title>Carbon</title>
     <script src="leet.js" charset="utf-8"></script>
-</head>
+    <style>
+        canvas {
+            display: block;
+            margin: 0 auto;
+        }
 
-<body>
-    <div class="w3-display-topmiddle">
-        <h1 class="leet">SAFER RIDE</h1>
-        <p><i class="leet">find all you need to plan a safe surf ride while helping to make the ocean a cleaner place</i></p>
-    </div>
-    <div id="navbar">
-        <a href="index.html">
-            <div id="home" class="link">
-                <p class="leet">Home</p>
-            </div>
-        </a>
-        <a href="form.html">
-            <div id="form" class="link">
-                <p class="leet">Form</p>
-            </div>
-        </a>
-        <a href="carbon.html">
-            <div id="carbon" class="link">
-                <p class="leet">Carbon</p>
-            </div>
-        </a>
-        <a href="forecast.html">
-            <div id="forecast" class="link">
-                <p class="leet">Forecast</p>
-            </div>
-        </a>
-        <div id="circle">
-            <div class="level"><img src="img/arrow.png"></div>
-        </div>
-    </div>
-    <div class="w3-display-middle">
-        <h1 class="leet">What kind of green are you ?</h1>
+        #page {
+            overflow: auto;
+        }
 
-        <form method="GET" action="carbon.js">
-            <h3 class="leet">Q1. Your laptop no longer works, what do you do ?</h3>
-            <input type="radio" name="q1" value="neuf" class="square">
-            <label class="leet">Buy a new one</label>
-            <br>
-            <input type="radio" name="q1" value="reconditionne" class="cross">
-            <label class="leet">Buy a reconditioned</label>
-            <br>
-            <input type="radio" name="q1" value="reparer" class="circle">
-            <label class="leet">Fix it</label>
-            <br>
+        .button {
+            top: 0;
+            left: -1000px;
+            position: absolute;
 
-            <h3 class="leet">Q2. You order a VR headset, which shipping mode do you choose ?</h3>
-            <input type="radio" name="q2" value="express" class="square">
-            <label class="leet">Express delivery (under two working days)</label>
-            <br>
-            <input type="radio" name="q2" value="standard" class="cross">
-            <label class="leet">Standard delivery</label>
-            <br>
-            <input type="radio" name="q2" value="magasin" class="circle">
-            <label class="leet">In-store withdrawal</label>
-            <br>
+        }
 
-            <h3 class="leet">Q3. You live near your workplace, which mean of transport do you use to get to it ?</h3>
-            <input type="radio" name="q3" value="voiture" class="square">
-            <label class="leet">Car</label>
-            <br>
-            <input type="radio" name="q3" value="commun" class="cross">
-            <label class="leet">Public transportation</label>
-            <br>
-            <input type="radio" name="q3" value="autre" class="circle">
-            <label class="leet">Bicycle, walking, ...</label>
-            <br>
+        .buttonsAnimates {
+            top: 0;
+            left: 0px;
+            position: absolute;
+            animation-name: buttons;
+            animation-duration: 2s;
+        }
 
-            <h3 class="leet">Q4. Which of the following habits correspond to yours the most ?</h3>
-            <input type="radio" name="q4" value="brancher" class="square">
-            <label class="leet">Let the electronics devices on stand-by mode or turned-on.</label>
-            <br>
-            <input type="radio" name="q4" value="led" class="cross">
-            <label class="leet">Only keep the lights permanently turned on, and shut-down everything else.</label>
-            <br>
-            <input type="radio" name="q4" value="eteins" class="circle">
-            <label class="leet">Always shut-down the devices when unused.</label>
-            <br>
-
-            <h3 class="leet">Q5. When you ventilate your house, the radiators are : </h3>
-            <input type="radio" name="q5" value="éteinds" class="circle">
-            <label class="leet">turned off</label>
-            <br>
-            <input type="radio" name="q5" value="allumés" class="square">
-            <label class="leet">switched on</label>
-            <br>
-            <input type="radio" name="q5" value="autre" class="cross">
-            <label class="leet">I don't know ! </label>
-            <br>
-
-            <h3 class="leet">Q6. Do you often throw your trash on the ground ? </h3>
-            <input type="radio" name="q6" value="jamais" class="circle">
-            <label class="leet">Never</label>
-            <br>
-            <input type="radio" name="q6" value="quelquesfois" class="cross">
-            <label class="leet">Sometimes, by accident</label>
-            <br>
-            <input type="radio" name="q6" value="bocou" class="square">
-            <label class="leet">I don't know, I don't really care about that stuff</label>
-
-            <h3 class="leet">Q7. What products do you focus on during shopping ?</h3>
-            <input type="radio" name="q7" value="aime" class="square">
-            <label class="leet">I just buy what please me the most</label>
-            <br>
-            <input type="radio" name="q7" value="biolocal" class="circle">
-            <label class="leet">I buy bio and/or local products</label>
-            <br>
-            <input type="radio" name="q7" value="rien" class="cross">
-            <label class="leet">I never eat.</label>
-            <br>
-
-            <h3 class="leet">Q8. How do you manage your water consumption ?</h3>
-            <input type="radio" name="q8" value="pasattention" class="cross">
-            <label class="leet">I don't pay attention to my water consumption</label>
-            <br>
-            <input type="radio" name="q8" value="reduction" class="circle">
-            <label class="leet">I really try to reduce it as much as possible</label>
-            <br>
-            <input type="radio" name="q8" value="nimportequoi" class="square">
-            <label class="leet">I take a bath every day</label>
-            <br>
-
-            <h3 class="leet">Q9. My trash,</h3>
-            <input type="radio" name="q9" value="tri" class="cross">
-            <label class="leet">I sort them</label>
-            <br>
-            <input type="radio" name="q9" value="patri" class="square">
-            <label class="leet">I don't sort them</label>
-            <br>
-            <input type="radio" name="q9" value="reduit" class="circle">
-            <label class="leet">I try to reduce my wastes as much as I can, and also sort them</label>
-            <br>
-
-            <h3 class="leet">Q10. What are your thoughts on the carbon footprint ?</h3>
-            <input type="radio" name="q10" value="jycroispas" class="square">
-            <label class="leet">I think it's bullshit.</label>
-            <br>
-            <input type="radio" name="q10" value="engager" class="circle">
-            <label class="leet">I'm committed on reduce my own carbon footprint</label>
-            <br>
-            <input type="radio" name="q10" value="pabien" class="cross">
-            <label class="leet">It's a cool indicator, but I am not going to change all my habit for it.</label>
-            <br>
-            <br>
-            <!--Recuperer reponses aux questions, et dire quel green tu es-->
-        </form>
-        <p id="res_circle" hidden class="leet">Plus écolo tu meurs ! Vos actions ont permis de réduire l’empreinte
-            carbone
-            générale,
-            poursuivez vos efforts. Je n’ai plus rien à vous apprendre, vous pouvez désormais évoluer en héros
-            légendaire en
-            sensibilisant les gens autour de vous à l’importance de l’environnement dans la vie. Je vous aime et toutes
-            les
-            licornes du monde vous bénissent.</p>
-        <p id="res_square" hidden class="leet">Vous êtes du genre à ne pas prêter attention à votre impact sur
-            l’environnement. Vous êtes
-            un connard irresponsable ! Faites attention les petits lutins de la forêt ne sont pas contents. Votre
-            empreinte
-            carbone augmente à chacune de vos mauvaises actions. Pensez à fermer le débit de l’eau quand vous vous
-            brossez
-            les dents ou faites la vaisselle. à trier vos déchets et bien les mettre dans une poubelle. Enfin, pour les
-            transports, si vous ne pouvez pas utiliser un moyen écologique, privilégiez les transports en communs. Et si
-            vous ne le faites pas pour vous, faites le pour votre pauvre porte-monnaie qui souffre de votre perte
-            d’emploi
-            ;)</p>
-        <p id="res_cross" hidden class="leet">Troll ou personne banale, vous êtes normal et prenez des décisions quelque
-            peu
-            contestables. Continuez vos efforts pour l’environnement et n’oubliez pas que manger local est bien mais
-            manger
-            est encore mieux !</p>
-        <button id="validate" type="button" onclick="processInputs()" class="leet">Valider</button>
-    </div>
-    <script type="text/javascript">
-        function processInputs() {
-            var circle_dom = document.querySelectorAll("input.circle");
-            var square_dom = document.querySelectorAll("input.square");
-            var cross_dom = document.querySelectorAll("input.cross");
-            var nb_circle = 0;
-            var nb_square = 0;
-            var nb_cross = 0;
-            for (var dom of circle_dom) {
-                if (dom.checked) {
-                    nb_circle++;
-                }
+        @keyframes buttons {
+            0% {
+                left: -1000px;
             }
-            for (var dom of square_dom) {
-                if (dom.checked) {
-                    nb_square++;
-                }
-            }
-            for (var dom of cross_dom) {
-                if (dom.checked) {
-                    nb_cross++;
-                }
-            }
-            if (nb_circle > nb_square && nb_circle > nb_cross) {
-                document.getElementById("res_circle").hidden = false;
-            } else if (nb_square > nb_circle && nb_square > nb_cross) {
-                document.getElementById("res_square").hidden = false;
-            } else if (nb_cross > nb_square && nb_cross > nb_circle) {
-                document.getElementById("res_cross").hidden = false;
-            } else {
-                document.getElementById("res_cross").hidden = false;
+
+            100% {
+                left: 0px;
             }
         }
-        document.getElementById("circle").addEventListener("mouseenter", e => {
-            document.getElementById("navbar").style.webkitAnimationPlayState = "running";
-        }, false);
-        document.getElementById("circle").addEventListener('mouseleave', e => {
-            document.getElementById("navbar").style.animationPlayState = "paused";
-        });
-        process();
-    </script>
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    <script src="lifegame.js" defer></script>
+</head>
+
+<body id="b">
+    <canvas id='myCanvas'>
+        Your browser does not support HTML5 Canvas.
+    </canvas>
+    <div class=" fixed-top h-100 w-100 " id="page">
+        <div class="w3-display-topmiddle container">
+            <h1 class="leet">SAFER RIDE</h1>
+            <p><i class="leet">find all you need to plan a safe surf ride while helping to make the ocean a cleaner
+                    place</i></p>
+        </div>
+        <div id="navbar">
+            <a href="index.html">
+                <div id="home" class="link">
+                    <p class="leet">Home</p>
+                </div>
+            </a>
+            <a href="form.html">
+                <div id="form" class="link">
+                    <p class="leet">Form</p>
+                </div>
+            </a>
+            <a href="carbon.html">
+                <div id="carbon" class="link">
+                    <p class="leet">Carbon</p>
+                </div>
+            </a>
+            <a href="forecast.html">
+                <div id="forecast" class="link">
+                    <p class="leet">Forecast</p>
+                </div>
+            </a>
+            <div id="circle">
+                <div class="level"><img src="img/arrow.png"></div>
+            </div>
+        </div>
+        <div class="w3-display-middle container">
+            <h1 class="leet">What kind of green are you ?</h1>
+
+            <form method="GET" action="carbon.js">
+                <h3 class="leet">Q1. Your laptop no longer works, what do you do ?</h3>
+                <input type="radio" name="q1" value="neuf" class="square">
+                <label class="leet">Buy a new one</label>
+                <br>
+                <input type="radio" name="q1" value="reconditionne" class="cross">
+                <label class="leet">Buy a reconditioned</label>
+                <br>
+                <input type="radio" name="q1" value="reparer" class="circle">
+                <label class="leet">Fix it</label>
+                <br>
+
+                <h3 class="leet">Q2. You order a VR headset, which shipping mode do you choose ?</h3>
+                <input type="radio" name="q2" value="express" class="square">
+                <label class="leet">Express delivery (under two working days)</label>
+                <br>
+                <input type="radio" name="q2" value="standard" class="cross">
+                <label class="leet">Standard delivery</label>
+                <br>
+                <input type="radio" name="q2" value="magasin" class="circle">
+                <label class="leet">In-store withdrawal</label>
+                <br>
+
+                <h3 class="leet">Q3. You live near your workplace, which mean of transport do you use to get to it ?
+                </h3>
+                <input type="radio" name="q3" value="voiture" class="square">
+                <label class="leet">Car</label>
+                <br>
+                <input type="radio" name="q3" value="commun" class="cross">
+                <label class="leet">Public transportation</label>
+                <br>
+                <input type="radio" name="q3" value="autre" class="circle">
+                <label class="leet">Bicycle, walking, ...</label>
+                <br>
+
+                <h3 class="leet">Q4. Which of the following habits correspond to yours the most ?</h3>
+                <input type="radio" name="q4" value="brancher" class="square">
+                <label class="leet">Let the electronics devices on stand-by mode or turned-on.</label>
+                <br>
+                <input type="radio" name="q4" value="led" class="cross">
+                <label class="leet">Only keep the lights permanently turned on, and shut-down everything else.</label>
+                <br>
+                <input type="radio" name="q4" value="eteins" class="circle">
+                <label class="leet">Always shut-down the devices when unused.</label>
+                <br>
+
+                <h3 class="leet">Q5. When you ventilate your house, the radiators are : </h3>
+                <input type="radio" name="q5" value="éteinds" class="circle">
+                <label class="leet">turned off</label>
+                <br>
+                <input type="radio" name="q5" value="allumés" class="square">
+                <label class="leet">switched on</label>
+                <br>
+                <input type="radio" name="q5" value="autre" class="cross">
+                <label class="leet">I don't know ! </label>
+                <br>
+
+                <h3 class="leet">Q6. Do you often throw your trash on the ground ? </h3>
+                <input type="radio" name="q6" value="jamais" class="circle">
+                <label class="leet">Never</label>
+                <br>
+                <input type="radio" name="q6" value="quelquesfois" class="cross">
+                <label class="leet">Sometimes, by accident</label>
+                <br>
+                <input type="radio" name="q6" value="bocou" class="square">
+                <label class="leet">I don't know, I don't really care about that stuff</label>
+
+                <h3 class="leet">Q7. What products do you focus on during shopping ?</h3>
+                <input type="radio" name="q7" value="aime" class="square">
+                <label class="leet">I just buy what please me the most</label>
+                <br>
+                <input type="radio" name="q7" value="biolocal" class="circle">
+                <label class="leet">I buy bio and/or local products</label>
+                <br>
+                <input type="radio" name="q7" value="rien" class="cross">
+                <label class="leet">I never eat.</label>
+                <br>
+
+                <h3 class="leet">Q8. How do you manage your water consumption ?</h3>
+                <input type="radio" name="q8" value="pasattention" class="cross">
+                <label class="leet">I don't pay attention to my water consumption</label>
+                <br>
+                <input type="radio" name="q8" value="reduction" class="circle">
+                <label class="leet">I really try to reduce it as much as possible</label>
+                <br>
+                <input type="radio" name="q8" value="nimportequoi" class="square">
+                <label class="leet">I take a bath every day</label>
+                <br>
+
+                <h3 class="leet">Q9. My trash,</h3>
+                <input type="radio" name="q9" value="tri" class="cross">
+                <label class="leet">I sort them</label>
+                <br>
+                <input type="radio" name="q9" value="patri" class="square">
+                <label class="leet">I don't sort them</label>
+                <br>
+                <input type="radio" name="q9" value="reduit" class="circle">
+                <label class="leet">I try to reduce my wastes as much as I can, and also sort them</label>
+                <br>
+
+                <h3 class="leet">Q10. What are your thoughts on the carbon footprint ?</h3>
+                <input type="radio" name="q10" value="jycroispas" class="square">
+                <label class="leet">I think it's bullshit.</label>
+                <br>
+                <input type="radio" name="q10" value="engager" class="circle">
+                <label class="leet">I'm committed on reduce my own carbon footprint</label>
+                <br>
+                <input type="radio" name="q10" value="pabien" class="cross">
+                <label class="leet">It's a cool indicator, but I am not going to change all my habit for it.</label>
+                <br>
+                <br>
+                <!--Recuperer reponses aux questions, et dire quel green tu es-->
+            </form>
+            <p id="res_circle" hidden class="leet">Plus écolo tu meurs ! Vos actions ont permis de réduire l’empreinte
+                carbone
+                générale,
+                poursuivez vos efforts. Je n’ai plus rien à vous apprendre, vous pouvez désormais évoluer en héros
+                légendaire en
+                sensibilisant les gens autour de vous à l’importance de l’environnement dans la vie. Je vous aime et
+                toutes
+                les
+                licornes du monde vous bénissent.</p>
+            <p id="res_square" hidden class="leet">Vous êtes du genre à ne pas prêter attention à votre impact sur
+                l’environnement. Vous êtes
+                un connard irresponsable ! Faites attention les petits lutins de la forêt ne sont pas contents. Votre
+                empreinte
+                carbone augmente à chacune de vos mauvaises actions. Pensez à fermer le débit de l’eau quand vous vous
+                brossez
+                les dents ou faites la vaisselle. à trier vos déchets et bien les mettre dans une poubelle. Enfin, pour
+                les
+                transports, si vous ne pouvez pas utiliser un moyen écologique, privilégiez les transports en communs.
+                Et si
+                vous ne le faites pas pour vous, faites le pour votre pauvre porte-monnaie qui souffre de votre perte
+                d’emploi
+                ;)</p>
+            <p id="res_cross" hidden class="leet">Troll ou personne banale, vous êtes normal et prenez des décisions
+                quelque
+                peu
+                contestables. Continuez vos efforts pour l’environnement et n’oubliez pas que manger local est bien mais
+                manger
+                est encore mieux !</p>
+            <button id="validate" type="button" onclick="processInputs()" class="leet">Valider</button>
+        </div>
+        <script type="text/javascript">
+            function processInputs() {
+                var circle_dom = document.querySelectorAll("input.circle");
+                var square_dom = document.querySelectorAll("input.square");
+                var cross_dom = document.querySelectorAll("input.cross");
+                var nb_circle = 0;
+                var nb_square = 0;
+                var nb_cross = 0;
+                for (var dom of circle_dom) {
+                    if (dom.checked) {
+                        nb_circle++;
+                    }
+                }
+                for (var dom of square_dom) {
+                    if (dom.checked) {
+                        nb_square++;
+                    }
+                }
+                for (var dom of cross_dom) {
+                    if (dom.checked) {
+                        nb_cross++;
+                    }
+                }
+                if (nb_circle > nb_square && nb_circle > nb_cross) {
+                    document.getElementById("res_circle").hidden = false;
+                } else if (nb_square > nb_circle && nb_square > nb_cross) {
+                    document.getElementById("res_square").hidden = false;
+                } else if (nb_cross > nb_square && nb_cross > nb_circle) {
+                    document.getElementById("res_cross").hidden = false;
+                } else {
+                    document.getElementById("res_cross").hidden = false;
+                }
+            }
+            document.getElementById("circle").addEventListener("mouseenter", e => {
+                document.getElementById("navbar").style.webkitAnimationPlayState = "running";
+            }, false);
+            document.getElementById("circle").addEventListener('mouseleave', e => {
+                document.getElementById("navbar").style.animationPlayState = "paused";
+            });
+            process();
+        </script>
+        <div id="button" class="button">
+            <button type="button" class="btn btn-primary" onclick="pause()">pause/unpause</button>
+            <button type="button" class="btn btn-secondary" onclick="random()">random</button>
+            <button type="button" class="btn btn-secondary" onclick="rapi()">vitesse + </button>
+            <button type="button" class="btn btn-secondary" onclick="lent()">vitesse -</button>
+            <button type="button" class="btn btn-secondary" onclick="ligne()">ligne</button>
+            <button type="button" class="btn btn-secondary" onclick="leaveGame()">leave game</button>
+        </div>
+    </div>
 </body>
 
 </html>
