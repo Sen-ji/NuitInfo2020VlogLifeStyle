@@ -6,32 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/index.css">
     <title>SAFER RIDE - FORECAST</title>
+    <script src="leet.js" charset="utf-8"></script>
 </head>
 
 <body>
     <div class="w3-display-topmiddle">
-        <h1>SAFER RIDE</h1>
-        <p><i>find all you need to plan a safe surf ride while helping to make the ocean a cleaner place</i></p>
+        <h1 class="leet">SAFER RIDE</h1>
+        <p><i class="leet">find all you need to plan a safe surf ride while helping to make the ocean a cleaner place</i></p>
     </div>
     <div id="navbar">
         <a href="index.html">
             <div id="home" class="link">
-                <p>Home</p>
+                <p class="leet">Home</p>
             </div>
         </a>
         <a href="form.html">
             <div id="form" class="link">
-                <p>Form</p>
+                <p class="leet">Form</p>
             </div>
         </a>
         <a href="carbon.html">
             <div id="carbon" class="link">
-                <p>Carbon</p>
+                <p class="leet">Carbon</p>
             </div>
         </a>
         <a href="forecast.html">
             <div id="forecast" class="link">
-                <p>Forecast</p>
+                <p class="leet">Forecast</p>
             </div>
         </a>
         <div id="circle">
@@ -39,10 +40,10 @@
         </div>
     </div>
     <div class="w3-display-middle">
-        <h1>FORECAST</h1>
+        <h1 class="leet">FORECAST</h1>
         <form action="" method="get" id="formBox">
             <div class="forecastForm">
-                <label for="name">Enter a city : </label>
+                <label for="name" class="leet">Enter a city : </label>
                 <input type="text" name="name" id="name" required>
             </div>
             <div class="forecastSubmit">
@@ -87,6 +88,7 @@
     document.getElementById("circle").addEventListener('mouseleave', e => {
         document.getElementById("navbar").style.animationPlayState = "paused";
     });
+    process();
 </script>
 
 </html>
