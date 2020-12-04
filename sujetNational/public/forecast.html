@@ -5,10 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/index.css">
-    <title>Forecast</title>
+    <title>SAFER RIDE - FORECAST</title>
 </head>
 
 <body>
+    <div class="w3-display-topmiddle">
+        <h1>SAFER RIDE</h1>
+        <p><i>find all you need to plan a safe surf ride while helping to make the ocean a cleaner place</i></p>
+    </div>
     <div id="navbar">
         <a href="index.html">
             <div id="home" class="link">
@@ -34,18 +38,20 @@
             <div class="level"><img src="img/arrow.png"></div>
         </div>
     </div>
-    <h1>Forecast</h1>
-    <form action="" method="get" id="formBox">
-        <div class="forecastForm">
-            <label for="name">Enter a city : </label>
-            <input type="text" name="name" id="name" required>
-        </div>
-        <div class="forecastSubmit">
-            <input type="submit" value="Search">
-        </div>
-    </form>
-    <table id="table">
-    </table>
+    <div class="w3-display-middle">
+        <h1>FORECAST</h1>
+        <form action="" method="get" id="formBox">
+            <div class="forecastForm">
+                <label for="name">Enter a city : </label>
+                <input type="text" name="name" id="name" required>
+            </div>
+            <div class="forecastSubmit">
+                <input type="submit" value="Search">
+            </div>
+        </form>
+        <table id="table">
+        </table>
+    </div>
 </body>
 <script>
     const queryString = window.location.search;

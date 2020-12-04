@@ -162,6 +162,10 @@ body {
     transform: rotate(-45deg);
 }
 
+.forecastSubmit {
+    margin-top: 10px;
+}
+
 #circle {
     border-radius: 180%;
     position: fixed;
@@ -190,7 +194,8 @@ body {
 
 table {
     margin: 0 auto;
-    margin-top: 5%;
+    margin-top: 2%;
+    margin-bottom: 30px;
 }
 
 table, th, td {
