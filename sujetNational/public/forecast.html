@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <form action="" method="get" id="form">
+        <div class="form-example">
+            <label for="name">Enter your name: </label>
+            <input type="text" name="name" id="name" required>
+        </div>
+        <div class="form-example">
+            <input type="submit" value="Subscribe!">
+        </div>
+    </form>
+    <div id="forecast">test</div>
+    <script>
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const product = urlParams.get('name')
+        console.log(product);
+        if (product != null) {
+
+            var request = new XMLHttpRequest()
+
+            // Open a new connection, using the GET request on the URL endpoint
+            request.open('GET', "https://api.worldweatheronline.com/premium/v1/weather.ashx?key=470acfdf38d148179b6214343200312&q=" + product + "&format=json&num_of_days=5", true)
+
+            request.onload = async function () {
+                var data = JSON.parse(this.response);
+                console.log(data);
+                document.getElementById("forecast").innerHTML = "Temperature : " + data.data.current_condition[0].temp_C + "C°";
+                document.getElementById("forecast").innerHTML += "Wind : " + data.data.current_condition[0].windspeedKmph + "Km/h";
+                document.getElementById("forecast").innerHTML += " from " + data.data.current_condition[0].winddir16Point;
+                document.getElementById("forecast").innerHTML += "humidity : " + data.data.current_condition[0].humidity + "%";
+            }
+
+            request.send();
+        }
+
+        document.getElementById('form').addEventListener('submit', function (evt) {
+
+            var city = document.getElementById("name").value;
+            console.log(city);
+        })
+    </script>
+</body>
+
+</html>

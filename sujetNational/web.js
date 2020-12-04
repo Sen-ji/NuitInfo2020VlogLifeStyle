@@ -37,8 +37,8 @@ app.use(express.static('public'))
 //     res.json({ msg: 'This is CORS-enabled for all origins!' })
 // })
 // io = require('socket.io').listen(serveur)
-server.listen(80, () => {       //écoute port 80
-   console.log('CORS-enabled web server listening on port 80')
+server.listen(8080, () => {       //écoute port 80
+   console.log('CORS-enabled web server listening on port 8080')
 })
 
 //------------creation variable-------
