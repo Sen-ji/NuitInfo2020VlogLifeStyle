@@ -11,7 +11,7 @@
 
 <body>
 
-    <h1>Form's seance</h1>
+    <h1>seance's form</h1>
 
     <form action="">
 
@@ -23,7 +23,7 @@
         <input type="text" nom="firstname" placeholder="your firstname">
 
         <fieldset>
-            <legend>Identification's prelevment</legend>
+            <legend>prelevment's identification</legend>
             <label>City</label>
             <input type="text" list="city" />
             <datalist id="city">
@@ -39,15 +39,8 @@
 
 
             <br>
-            <!--TODO en js-->
             <label>Date</label>
             <input type="datatime-local" id="date"><br>
-            <!--
-            <label for="">Hour Beginning</label>
-            <input type="time" id="hourB" min="00:00" max="05:00" required value="12:00"><br>
-           <label for="">Hour Ending</label>
-            <input type="time" id="hourE" min="00:00" max="23:59">
-            -->
 
             <label>Hour Beginning</label>
             <input data-clocklet id="hourB" oninput="operation()">
@@ -66,13 +59,50 @@
         </fieldset>
 
         <fieldset>
-            <legend>Fréquentation du spot</legend>
+            <legend>Spot's frequentation</legend>
+            <label>swimmer affluence</label><br>
+            <label>low</label>
+            <input type="range" min="0" max="2">
+            <label>high</label><br>
+
+            <label>water sport enthusiasts</label><br>
+            <label>low</label>
+            <input type="range" min="0" max="10">
+            <label>high</label>
+
+            <br>
+            <label>fishing ship</label><br>
+            <label>low</label>
+            <input type="range" min="0" max="10">
+            <label>high</label>
+
+            <br>
+            <label>square-time ship</label><br>
+            <label>low</label>
+            <input type="range" min="0" max="10">
+            <label>high</label>
+
+            <br>
+            <label>sailing ship</label><br>
+            <label>low</label>
+            <input type="range" min="0" max="10">
+            <label>high</label>
         </fieldset>
 
         <fieldset>
             <legend>La waterman</legend>
-            <input type="checkbox">
+            <input type="checkbox" value="cigarets"> <label>Cigarets</label>
+            <input type="checkbox" value="solarcream"> <label>Solar cream</label>
+            <input type="checkbox" value="perfume"> <label>Perfume</label>
+            <input type="checkbox" value="moisturizing cream"> <label>moisturizing cream</label>
+            <input type="checkbox" value="makeup"> <label>Makeup</label>
+            <input type="checkbox" value="gazoline"> <label>Gazoline</label>
+            <input type="checkbox" value="fertilizer"> <label>Fertilizer</label>
+            <input type="checkbox" value="painting"> <label>Painting</label> <br>
+            <input type="checkbox" value="other"><label>Other : </label><input type="text">
         </fieldset>
+
+        <input type="submit">
 
     </form>
 
