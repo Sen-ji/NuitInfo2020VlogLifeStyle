@@ -2,6 +2,7 @@
     text-align: center;
     line-height: 15px;
     text-shadow: 0.1em 0.1em 0.2em black;
+    border-radius: 10px;
     background-image:url("../img/sea-wave-during-storm.jpg");
 }
 
@@ -23,26 +24,29 @@ body {
     margin-left: 180px;
     margin-right: 30px;
     color: white;
+    
     /*position: absolute; 
     top: 60%; left: 50%; /* à 50%/50% du parent référent */
     /*transform: translate(-40%, -50%); /* décalage de 50% de sa propre taille */
 }
 
 .w3-display-middle {
-    background-color: grey;
+    background-color: rgb(153, 154, 158);
     height: auto;
     padding-top: 20px;
     padding-bottom: 5px;
     margin-bottom: 20px;
+    border-radius: 10px;
 }
 
 .w3-display-bottommiddle {
-    background-color: rgb(59, 59, 87);
+    background-color: rgb(22, 82, 77);
     text-align: left;
     padding: 20px;
     padding-bottom: 110px;
     font-size: 12px;
     height: auto;
+    border-radius: 10px;
 }
 
 .left {
@@ -93,7 +97,7 @@ body {
     border-right: solid 2px white;
     border-bottom: solid 2px white;
     border-top-left-radius: 180%;
-    background-color: #3A94D5;
+    background-color:rgb(22, 82, 77);
     width: 25vh;
     height: 25vh; 
     line-height: 25vh;
@@ -111,7 +115,7 @@ body {
     border-left: solid 2px white;
     border-bottom: solid 2px white;
     border-top-right-radius: 180%;
-    background-color: #3A94D5;
+    background-color: rgb(22, 82, 77);
     width: 25vh;
     height: 25vh; 
     line-height: 25vh;
@@ -128,7 +132,7 @@ body {
     border-right: solid 2px white;
     border-top: solid 2px white;
     border-bottom-left-radius: 180%;
-    background-color: #3A94D5;
+    background-color:rgb(22, 82, 77);
     width: 25vh;
     height: 25vh; 
     line-height: 25vh;
@@ -146,7 +150,7 @@ body {
     border-left: solid 2px white;
     border-top: solid 2px white;
     border-bottom-right-radius: 180%;
-    background-color: #3A94D5;
+    background-color:rgb(22, 82, 77);
     width: 25vh;
     height: 25vh; 
     line-height: 25vh;
