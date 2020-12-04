@@ -136,20 +136,35 @@ const draw = () => {
 }
 function voisinNb(x, y) {
     n = 0;
-    if (tab[x - 1]) {
-        n = tab[x - 1][y - 1] ? n + 1 : n
-        n = tab[x - 1][y] ? n + 1 : n
-        n = tab[x - 1][y + 1] ? n + 1 : n
+    // if (tab[x - 1]) {
+    //     n = tab[x - 1][y - 1] ? n + 1 : n
+    //     n = tab[x - 1][y] ? n + 1 : n
+    //     n = tab[x - 1][y + 1] ? n + 1 : n
+    // }
+    // n = tab[x][y - 1] ? n + 1 : n
+    // n = tab[x][y + 1] ? n + 1 : n
 
-    }
-    n = tab[x][y - 1] ? n + 1 : n
-    n = tab[x][y + 1] ? n + 1 : n
+    // if (tab[x + 1]) {
+    //     n = tab[x + 1][y - 1] ? n + 1 : n
+    //     n = tab[x + 1][y] ? n + 1 : n
+    //     n = tab[x + 1][y + 1] ? n + 1 : n
+    // }
+    let x1=x-1<0?tab.length-1:x-1;
+    let x2=x;
+    let x3=x+1>tab.length-1?0:x+1;
+    let y1=y-1<0?tab[0].length-1:y-1;
+    let y2=y;
+    let y3=y+1>tab[0].length-1?0:y+1;
+    n = tab[x1][y1] ? n + 1 : n
+    n = tab[x1][y2] ? n + 1 : n
+    n = tab[x1][y3] ? n + 1 : n
+    n = tab[x2][y1] ? n + 1 : n
+    n = tab[x2][y3] ? n + 1 : n
+    n = tab[x3][y1] ? n + 1 : n
+    n = tab[x3][y2] ? n + 1 : n
+    n = tab[x3][y3] ? n + 1 : n
 
-    if (tab[x + 1]) {
-        n = tab[x + 1][y - 1] ? n + 1 : n
-        n = tab[x + 1][y] ? n + 1 : n
-        n = tab[x + 1][y + 1] ? n + 1 : n
-    }
+    
     return n
 }
 inter = setInterval(draw, vitesse)
