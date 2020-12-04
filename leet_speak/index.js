@@ -79,8 +79,11 @@ function convert(input, map) {
 }
 
 function process(level) {
-	let content = document.getElementById("leet").innerHTML;
-	return convert(content, leet["level_"+level]);
+	let doms = document.querySelectorAll(".leet");
+	for (let dom of doms) {
+		console.log(dom);
+		dom.innerHTML = convert(dom.innerHTML.toLowerCase(), leet["level_"+level]);
+	}
 }
 
 var keys_konami = [];
