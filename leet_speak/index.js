@@ -70,19 +70,54 @@ var leet = {
 	}
 };
 
-var level = 1;
-
-function convert(input) {
-	console.log(input);
-	console.log(input["w"]);
+function convert(input, map) {
+	let result = input;
+	Object.keys(map).forEach(function(k){
+		result = result.replaceAll(k, map[k]);
+	});
+	return result;
 }
 
 function process(level) {
-	convert(leet["level_"+level]);
+	let content = document.getElementById("leet").innerHTML;
+	return convert(content, leet["level_"+level]);
 }
 
+var keys_konami = [];
+var konami = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a"];
+var keys_covid = [];
+var covid = ["c", "o", "v", "i", "d"];
+
 document.addEventListener("keydown", event => {
-	if (event.key ==  "a") {
-		process(2);
+	if (event.key == konami[keys_konami.length]) {
+		keys_konami.push(event.key);
+	} else {
+		keys_konami = [];
+	}
+	if (event.key == covid[keys_covid.length]) {
+		keys_covid.push(event.key);
+	} else {
+		keys_covid = [];
+	}
+	if (keys_konami.length == konami.length) {
+		document.getElementById("leet").innerHTML = process(1);
+		keys_konami = [];
+	}
+	if (keys_covid.length == covid.length) {
+		document.getElementById("leet").innerHTML = process(2);
+		keys_covid = [];
+	}
+	console.log(event.key);
+	if (event.key == " ") {
+		// console.log(reverse(document.getElementById("leet").innerHTML, leet["level_2"]));
+		document.location.reload();
 	}
 });
+
+function reverse(input, map) {
+	let result = input;
+	Object.keys(map).forEach(function(k){
+		result = result.replaceAll(map[k], k);
+	});
+	return result;
+}
