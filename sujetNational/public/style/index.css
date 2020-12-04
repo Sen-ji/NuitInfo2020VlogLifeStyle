@@ -127,6 +127,17 @@ body {
     transform: rotate(-135deg);
 }
 
+fieldset {
+    margin: 60px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.input {
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
 #carbon {
     box-sizing: border-box;
     border-right: solid 2px white;

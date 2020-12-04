@@ -45,66 +45,109 @@
         <h1>YOUR SESSION'S FORM</h1>
 
         <form action="">
+            <div class="input">
+                <label>NAME</label>
+                <input type="text" nom="name" placeholder="your lastname">
+            </div>
 
-            <label>name</label>
-            <input type="text" nom="name" placeholder="your lastname">
-
-            <br>
-            <label>firstname</label>
-            <input type="text" nom="firstname" placeholder="your firstname">
+            <div class="input">
+                <br>
+                <label>FIRSNAME</label>
+                <input type="text" nom="firstname" placeholder="your firstname">
+            </div>
 
             <fieldset>
                 <legend>Identification's prelevment</legend>
-                <label>City</label>
-                <input type="text" list="city" />
-                <datalist id="city">
-                    <!--TODO Import BD city-->
-                    <option value="1">Biarritz</option>
-                    <option value="2">Arcachon</option>
-                    <option value="3">Leucate</option>
-                </datalist>
+                <div class="input">
+                    <label>City</label>
+                    <input type="text" list="city" />
+                    <datalist id="city">
+                        <!--TODO Import BD city-->
+                        <option value="1">Biarritz</option>
+                        <option value="2">Arcachon</option>
+                        <option value="3">Leucate</option>
+                    </datalist>
+                </div>
 
                 <!--TODO Afficher seulement les spots de la ville selectionné-->
                 <br>
-                <label>Spot</label>
-
+                <div class="input">
+                    <label>Spot</label>
+                </div>
 
                 <br>
                 <!--TODO en js-->
-                <label>Date</label>
-                <input type="datatime-local" id="date"><br>
-                <!--
-            <label for="">Hour Beginning</label>
-            <input type="time" id="hourB" min="00:00" max="05:00" required value="12:00"><br>
-           <label for="">Hour Ending</label>
-            <input type="time" id="hourE" min="00:00" max="23:59">
-            -->
-
-                <label>Hour Beginning</label>
-                <input data-clocklet id="hourB" oninput="operation()">
+                <div class="input">
+                    <label>Date</label>
+                    <input type="datatime-local" id="date"><br>
+                </div>
+                
+                <div class="input">
+                    <label>Hour Beginning</label>
+                    <input data-clocklet id="hourB" oninput="operation()">
+                </div>
 
                 <br>
-                <label>Hour Ending</label>
-                <input data-clocklet id="hourE" oninput="operation()">
+                <div class="input">
+                    <label>Hour Ending</label>
+                    <input data-clocklet id="hourE" oninput="operation()">
+                </div>
 
-                <br>
-                <label>Duration</label>
-                <p id="operation"></p>
-
+                <div class="input">
+                    <br>
+                    <label>Duration</label>
+                    <p id="operation"></p>
+                </div>
 
 
 
             </fieldset>
 
             <fieldset>
-                <legend>Fréquentation du spot</legend>
+                <legend>Spot's frequentation</legend>
+                <label>swimmer affluence</label><br>
+                <label>low</label>
+                <input type="range" min="0" max="2">
+                <label>high</label><br>
+
+                <label>water sport enthusiasts</label><br>
+                <label>low</label>
+                <input type="range" min="0" max="10">
+                <label>high</label>
+
+                <br>
+                <label>fishing ship</label><br>
+                <label>low</label>
+                <input type="range" min="0" max="10">
+                <label>high</label>
+
+                <br>
+                <label>square-time ship</label><br>
+                <label>low</label>
+                <input type="range" min="0" max="10">
+                <label>high</label>
+
+                <br>
+                <label>sailing ship</label><br>
+                <label>low</label>
+                <input type="range" min="0" max="10">
+                <label>high</label>
             </fieldset>
 
             <fieldset>
-                <legend>La waterman</legend>
-                <input type="checkbox">
+                <legend>Waterman</legend>
+                <input type="checkbox" value="cigarets"> <label>Cigarets</label>
+                <input type="checkbox" value="solarcream"> <label>Solar cream</label>
+                <input type="checkbox" value="perfume"> <label>Perfume</label>
+                <input type="checkbox" value="moisturizing cream"> <label>moisturizing cream</label>
+                <input type="checkbox" value="makeup"> <label>Makeup</label>
+                <input type="checkbox" value="gazoline"> <label>Gazoline</label>
+                <input type="checkbox" value="fertilizer"> <label>Fertilizer</label>
+                <input type="checkbox" value="painting"> <label>Painting</label> <br>
+                <input type="checkbox" value="other"><label>Other : </label><input type="text">
             </fieldset>
 
+            <input type="submit">
         </form>
     </div>
 </body>
