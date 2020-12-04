@@ -119,10 +119,46 @@
         <label>Je trouve que c'est vraiment nul (mais je fais rien)</label>
         <br>
         <br>
-
-        <input type="submit">
 <!--Recuperer reponses aux questions, et dire quel green tu es-->
     </form>
+		<p id="res_circle" hidden>Plus écolo tu meurs ! Vos actions ont permis de réduire l’empreinte carbone générale, poursuivez vos efforts. Je n’ai plus rien à vous apprendre, vous pouvez désormais évoluer en héros légendaire en sensibilisant les gens autour de vous à l’importance de l’environnement dans la vie. Je vous aime et toutes les licornes du monde vous bénissent.</p>
+		<p id="res_square" hidden>Vous êtes du genre à ne pas prêter attention à votre impact sur l’environnement. Vous êtes un connard irresponsable ! Faites attention les petits lutins de la forêt ne sont pas contents. Votre empreinte carbone augmente à chacune de vos mauvaises actions. Pensez à fermer le débit de l’eau quand vous vous brossez les dents ou faites la vaisselle. à trier vos déchets et bien les mettre dans une poubelle. Enfin, pour les transports, si vous ne pouvez pas utiliser un moyen écologique, privilégiez les transports en communs. Et si vous ne le faites pas pour vous, faites le pour votre pauvre porte-monnaie qui souffre de votre perte d’emploi ;)</p>
+		<p id="res_cross" hidden>Troll ou personne banale, vous êtes normal et prenez des décisions quelque peu contestables. Continuez vos efforts pour l’environnement et n’oubliez pas que manger local est bien mais manger est encore mieux !</p>
+		<button type="button" onclick="processInputs()">Valider</button>
+		<script type="text/javascript">
+			function processInputs() {
+				var circle_dom = document.querySelectorAll("input.circle");
+				var square_dom = document.querySelectorAll("input.square");
+				var cross_dom = document.querySelectorAll("input.cross");
+				var nb_circle = 0;
+				var nb_square = 0;
+				var nb_cross = 0;
+				for (var dom of circle_dom) {
+					if (dom.checked) {
+						nb_circle++;
+					}
+				}
+				for (var dom of square_dom) {
+					if (dom.checked) {
+						nb_square++;
+					}
+				}
+				for (var dom of cross_dom) {
+					if (dom.checked) {
+						nb_cross++;
+					}
+				}
+				if (nb_circle > nb_square && nb_circle > nb_cross) {
+					document.getElementById("res_circle").hidden = false;
+				} else if (nb_square > nb_circle && nb_square > nb_cross) {
+					document.getElementById("res_square").hidden = false;
+				} else if (nb_cross > nb_square && nb_cross > nb_circle) {
+					document.getElementById("res_cross").hidden = false;
+				} else {
+					document.getElementById("res_cross").hidden = false;
+				}
+			}
+		</script>
 </body>
 
 </html>
