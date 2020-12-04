@@ -4,51 +4,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="style/index.css">
+    <title>Forecast</title>
 </head>
 
 <body>
-
-    <form action="" method="get" id="form">
-        <div class="form-example">
-            <label for="name">Enter your name: </label>
+    <div id="navbar">
+        <a href="index.html">
+            <div id="home" class="link">
+                <p>Home</p>
+            </div>
+        </a>
+        <a href="form.html">
+            <div id="form" class="link">
+                <p>Form</p>
+            </div>
+        </a>
+        <a href="carbon.html">
+            <div id="carbon" class="link">
+                <p>Carbon</p>
+            </div>
+        </a>
+        <a href="forecast.html">
+            <div id="forecast" class="link">
+                <p>Forecast</p>
+            </div>
+        </a>
+        <div id="circle">
+            <div class="level"><img src="img/arrow.png"></div>
+        </div>
+    </div>
+    <h1>Forecast</h1>
+    <form action="" method="get" id="formBox">
+        <div class="forecastForm">
+            <label for="name">Enter a city : </label>
             <input type="text" name="name" id="name" required>
         </div>
-        <div class="form-example">
-            <input type="submit" value="Subscribe!">
+        <div class="forecastSubmit">
+            <input type="submit" value="Search">
         </div>
     </form>
-    <div id="forecast">test</div>
-    <script>
-        const queryString = window.location.search;
-        const urlParams = new URLSearchParams(queryString);
-        const product = urlParams.get('name')
-        console.log(product);
-        if (product != null) {
-
-            var request = new XMLHttpRequest()
-
-            // Open a new connection, using the GET request on the URL endpoint
-            request.open('GET', "https://api.worldweatheronline.com/premium/v1/weather.ashx?key=470acfdf38d148179b6214343200312&q=" + product + "&format=json&num_of_days=5", true)
-
-            request.onload = async function () {
-                var data = JSON.parse(this.response);
-                console.log(data);
-                document.getElementById("forecast").innerHTML = "Temperature : " + data.data.current_condition[0].temp_C + "C°";
-                document.getElementById("forecast").innerHTML += "Wind : " + data.data.current_condition[0].windspeedKmph + "Km/h";
-                document.getElementById("forecast").innerHTML += " from " + data.data.current_condition[0].winddir16Point;
-                document.getElementById("forecast").innerHTML += "humidity : " + data.data.current_condition[0].humidity + "%";
-            }
-
-            request.send();
-        }
-
-        document.getElementById('form').addEventListener('submit', function (evt) {
-
-            var city = document.getElementById("name").value;
-            console.log(city);
-        })
-    </script>
+    <table id="table">
+    </table>
 </body>
+<script>
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const name = urlParams.get('name');
+    if (name != null) {
+        var request = new XMLHttpRequest()
+
+        request.open('GET', "https://api.worldweatheronline.com/premium/v1/weather.ashx?key=470acfdf38d148179b6214343200312&q=" + name + "&format=json&num_of_days=5", true)
+
+        request.onload = async function () {
+            var data = JSON.parse(this.response);
+            var table = document.getElementById("table");
+            var row = table.insertRow(0);
+            row.insertCell(0).innerHTML = "Temperature";
+            row.insertCell(1).innerHTML = data.data.current_condition[0].temp_C + " C°";
+            row = table.insertRow(1);
+            row.insertCell(0).innerHTML = "Wind";
+            row.insertCell(1).innerHTML = data.data.current_condition[0].windspeedKmph + " Km/h from " + data.data.current_condition[0].winddir16Point;
+            row = table.insertRow(2);
+            row.insertCell(0).innerHTML = "Humidity";
+            row.insertCell(1).innerHTML = data.data.current_condition[0].humidity + "%";
+        }
+        request.send();
+    }
+
+    document.getElementById('form').addEventListener('submit', function (e) {
+        var city = document.getElementById("name").value;
+    })
+    document.getElementById("circle").addEventListener("mouseenter", e => {
+        document.getElementById("navbar").style.webkitAnimationPlayState = "running";
+    }, false);
+    document.getElementById("circle").addEventListener('mouseleave', e => {
+        document.getElementById("navbar").style.animationPlayState = "paused";
+    });
+</script>
 
 </html>
